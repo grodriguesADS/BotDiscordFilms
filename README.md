@@ -52,10 +52,6 @@ BotDiscordFilms is a Discord bot designed to help users find and share informati
 
 Contributions are welcome! Please open an issue or submit a pull request.
 
-## License
-
-This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
-
 ## Contact
 
 For any questions or suggestions, please contact [grodriguesADS](mailto:guilherme.ads.2022@gmail.com).
