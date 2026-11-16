@@ -1,57 +1,43 @@
 # BotDiscordFilms
 
-BotDiscordFilms is a Discord bot designed to help users find and share information about films. It can search for movies, provide details, and recommend films based on user preferences.
+Bot em Python para gerenciar uma lista de filmes em servidores do Discord. O bot usa SQLAlchemy para registrar a lista e consulta o TMDB para buscar informações sobre filmes.
 
-## Features
+## Como executar
 
-- Search for movies by title
-- Get detailed information about a movie
-- Receive movie recommendations
-- Share movie details with other users in the Discord server
+1. Clone o repositório e instale as dependências:
 
-## Installation
+   ```bash
+   git clone https://github.com/grodriguesADS/BotDiscordFilms.git
+   cd BotDiscordFilms
+   python -m pip install -r requirements.txt
+   ```
 
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/grodriguesADS/BotDiscordFilms.git
-    ```
-2. Navigate to the project directory:
-    ```bash
-    cd BotDiscordFilms
-    ```
-3. Install the required dependencies:
-    ```bash
-    npm install
-    ```
+2. Configure as variáveis de ambiente `DISCORD_TOKEN` e `TMDB_API_KEY`. Crie o arquivo local `config/config.py` com o conteúdo abaixo:
 
-## Usage
+   ```python
+   import os
 
-1. Create a `.env` file in the root directory and add your Discord bot token:
-    ```
-    DISCORD_TOKEN=your_discord_bot_token
-    ```
-2. Start the bot:
-    ```bash
-    npm start
-    ```
+   DISCORD_TOKEN = os.environ["DISCORD_TOKEN"]
+   TMDB_API_KEY = os.environ["TMDB_API_KEY"]
+   BOT_PREFIX = "db!"
+   ```
 
-## Commands
+   No Discord Developer Portal, habilite **Message Content Intent** para o bot ler comandos com prefixo. Mantenha as credenciais nas variáveis de ambiente.
 
-- `db!addfilme <nome do filme>`: Add a movie to the list.
-- `db!removefilme <nome do filme>`: Remove a movie from the list.
-- `db!listafilmes`: Display all movies in the list.
-- `db!procurafilme <nome do filme>`: Search for a movie on TMDB.
-- `db!geraarquivo`: Generate a list of movies in the list.
-- `db!tempofilme <nome do filme>`: Inform the time the movie ends.
-- `db!limpafilmes`: Remove all movies from the list.
-- `db!sorteafilme`: Pick a random movie to watch.
-- `db!removefilmeusuario <@usuário>`: Remove all movies added by the user.
-- `db!help`: Show this help message.
+3. Na raiz do projeto, inicie o bot com `python main.py`.
 
-## Contributing
+## Comandos
 
-Contributions are welcome! Please open an issue or submit a pull request.
+Os exemplos abaixo usam o prefixo `db!`:
 
-## Contact
+- `db!addfilme <nome>` adiciona um filme.
+- `db!listafilmes` exibe a lista de filmes.
+- `db!removefilme <nome>` remove um filme.
+- `db!procurafilme <título>` busca um filme no TMDB.
+- `db!sorteafilme` sorteia um filme da lista.
+- `db!help` mostra os comandos disponíveis.
 
-For any questions or suggestions, please contact [grodriguesADS](mailto:guilherme.ads.2022@gmail.com).
+## Contato
+
+[Guilherme Rodrigues](mailto:guilherme.ads.2022@gmail.com)
+
